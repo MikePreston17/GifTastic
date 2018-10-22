@@ -1,5 +1,5 @@
 const apiKey = 'IRJyC5Ga1PNRTnPxurEfnE5C9HkEADbC';
-const topics = ["candy", "chocolate", "root beer", "cats in boxes", "desert eagle"]
+const topics = ["candy", "chocolate", "root beer", "cats in boxes", "desert eagle", "Wonka"]
 
 window.onload = init;
 
@@ -7,6 +7,8 @@ function init() {
     renderTopicButtons();
     initEvents();
 }
+
+//TODO: fix isue with added buttons not having handlers / previous buttons losing handles.
 
 function initEvents() {
 
@@ -25,15 +27,19 @@ function initEvents() {
         let text = $(this).attr('data-name');
         if (text)
             renderGIF({
-                text: text
+                text: text.split(' ').join('-'),
+                offset: 10,
             });
     })
 }
 
 function renderGIF(search) {
     let searchTerm = search.text;
+    let offset = search.offset;
 
-    let queryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=10&rating=PG`;
+    searchTerm.print();
+
+    let queryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=10&rating=PG&offset=${offset}`;
 
     var div = $('#images');
 
@@ -48,6 +54,7 @@ function renderGIF(search) {
         }));
 
         urls.forEach(url => {
+            // var card = $('div').addClass('card');
 
             var image = $('<img>')
                 .addClass('gif')
@@ -55,7 +62,7 @@ function renderGIF(search) {
                 .attr("alt", `${searchTerm} image`)
                 .attr('data-state', 'still')
                 .attr('data-still', url.still)
-                .attr('data-animate', url.original);
+                .attr('data-animate', url.original)
 
             //Animation toggle:
             image.on('click', function () {
@@ -74,7 +81,10 @@ function renderGIF(search) {
                 }
             })
 
-            div.prepend(image);
+            // image.appendTo(card);
+            // card.prependTo(div);
+
+            image.prependTo(div);
         });
     })
 
