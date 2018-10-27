@@ -8,7 +8,7 @@ function init() {
     initEvents();
 }
 
-//TODO: fix isue with added buttons not having handlers / previous buttons losing handles.
+//TODO: under each img, display rating.
 
 function initEvents() {
 
@@ -18,18 +18,8 @@ function initEvents() {
 
         var topic = $("#topic").val().trim();
         // console.log('new topic: ', topic);
-        topics.push(topic);
+        if (topic) topics.push(topic);
         renderTopicButtons();
-    })
-
-    //Any button:
-    $('button').on('click', function () {
-        let text = $(this).attr('data-name');
-        if (text)
-            renderGIF({
-                text: text.split(' ').join('-'),
-                offset: 10,
-            });
     })
 }
 
@@ -53,7 +43,8 @@ function renderGIF(search) {
             still: i.images.original_still.url
         }));
 
-        urls.forEach(url => {
+        // urls.forEach(url => {
+        for (let url of urls) {
             // var card = $('div').addClass('card');
 
             var image = $('<img>')
@@ -85,7 +76,8 @@ function renderGIF(search) {
             // card.prependTo(div);
 
             image.prependTo(div);
-        });
+        }
+        // );
     })
 
 }
@@ -99,6 +91,17 @@ function renderTopicButtons() {
             .addClass("topic btn-secondary")
             .attr("data-name", topic)
             .text(topic).appendTo(view);
+    })
+
+    //Any button:
+    $('button').on('click', function () {
+        console.log('inside any button() ', );
+        let text = $(this).attr('data-name');
+        if (text)
+            renderGIF({
+                text: text.split(' ').join('-'),
+                offset: 10,
+            });
     })
 }
 
