@@ -1,3 +1,38 @@
+:root {
+    /* --global--concept--size */
+    --global--spacer--sm: .5rem;
+    --global--spacer--md: 1rem;
+    --global--spacer--lg: 2rem;
+
+    /* --global--concept--PropertyCamelCase */
+    --global--main-title--FontSize: 2rem;
+    --global--secondary-title--FontSize: 1.8rem;
+    --global--body--FontSize: 1rem;
+
+    /* --global--state--PropertyCamelCase */
+    --global--hover--BackgroundColor: #ccc;
+    --global--primary-color: #bada55;
+}
+
+/* Defines the btn component */
+.btn {
+    padding: var(--spacer-sm) var(--spacer-md);
+}
+
+/* Defines the alert component */
+.alert {
+    /* padding: var(--spacer-sm) var(--spacer-md); */
+    --alert--Padding: var(--global--spacer--md);
+    --alert--primary--BackgroundColor: var(--global--primary-color);
+    --alert__title--FontSize: var(--global--secondary-title--FontSize);
+}
+
+.p--primary {
+    /* background-color: var(--global--primary-color); */
+    --p--primary--backgroundColor: var(--global--primary-color, rgb(126, 17, 153));
+    /* background-color: var(--p--primary--backgroundColor); */
+}
+
 .btn-secondary {
     margin: 10px;
     padding: 7px;
@@ -6,9 +41,3 @@
 .container {
     width: 960px;
 }
-
-/* .jumbotron {
-    width: 960px;
-    align-content: center;
-    float: left;
-} */
