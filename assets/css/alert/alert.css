@@ -1,0 +1,54 @@
+/* // Component variables follow the formula:
+// `--block__element--modifier--state--PropertyCamelCase` */
+
+.alert {
+    --alert--BorderWidth: var(--global--BorderWidth);
+    --alert--BorderColor: var(--global--dark--BorderColor);
+    --alert--Color: var(--global--dark--Color);
+
+    --alert--PaddingTop: var(--global--spacer--sm);
+    --alert--PaddingRight: var(--global--spacer--sm);
+    --alert--PaddingBottom: var(--global--spacer--sm);
+    --alert--PaddingLeft: var(--global--spacer--sm);
+
+    --alert__title--FontSize: var(--global--secondary-title--FontSize);
+    --alert__title--MarginBottom: var(--global--spacer--xxs);
+
+    /* // Primary btn */
+    --alert--primary--BorderColor: var(--global--primary--Color);
+    --alert--primary--Color: var(--global--primary--Color);
+
+    /* // Warning btn */
+    --alert--warning--BorderColor: var(--global--warning--Color);
+    --alert--warning--Color: var(--global--warning--Color);
+
+    /* // Danger btn */
+    --alert--danger--BorderColor: var(--global--danger--Color);
+    --alert--danger--Color: var(--global--danger--Color);
+
+    border: var(--alert--BorderWidth, 1px) solid var(--alert--BorderColor, #bbb);
+    color: var(--alert--Color, #292e34);
+    padding: var(--alert--PaddingTop, 1rem) var(--alert--PaddingRight, 1rem) var(--alert--PaddingBottom, 1rem) var(--alert--PaddingLeft, 1rem);
+
+
+}
+
+alert.__title {
+    font-size: var(--alert__title--FontSize, 1.5rem);
+    margin-bottom: var(--alert__title--MarginBottom, 0.25rem);
+}
+
+alert.is-primary {
+    border-color: var(--alert--primary--BorderColor, #39a5dc);
+    color: var(--alert--primary--Color, #39a5dc);
+}
+
+alert.is-warning {
+    border-color: var(--alert--warning--BorderColor, #ec7a08);
+    color: var(--bualerttton--warning--Color, #ec7a08);
+}
+
+alert.is-danger {
+    border-color: var(--alert--danger--BorderColor, #c00);
+    color: var(--alert--danger--Color, #c00);
+}

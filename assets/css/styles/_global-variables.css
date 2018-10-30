@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Overpass:300,400,700");
+
+:root {
+    /* // Links */
+    --global--link--Color: var(--global--primary--Color);
+    --global--link--TextDecoration: none;
+    --global--link--hover-Color: #0088ce;
+    --global--link--hover--TextDecoration: underline;
+
+    /* // Borders */
+    --global--BorderWidth: 1px;
+    --global--dark--BorderColor: #bbb;
+    --global--light--BorderColor: #d1d1d1;
+
+    /* // spacers */
+    /* // https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62 */
+    --global--spacer--xxs: 0.125rem;
+    --global--spacer--xs: 0.25rem;
+    --global--spacer--sm: 0.5rem;
+    --global--spacer--md: 1rem;
+    --global--spacer--lg: 2rem;
+    --global--spacer--xl: 3rem;
+
+    /* // Color */
+
+    /* //Theme colors */
+    --global--primary--Color: #39a5dc;
+    --global--primary--dark--Color: #0088ce;
+
+    --global--danger--Color: #c00;
+    --global--danger--dark--Color: #a30000;
+
+    --global--warning--Color: #ec7a08;
+    --global--warning--dark--Color: #b35c00;
+
+    /* // Text color */
+    --global--dark--Color: #292e34;
+    --global--dark--off--Color: #8b8d8f;
+    --global--light--Color: #fafafa;
+    --global--light--off-Color: #d1d1d1;
+
+    /* // Background color */
+    --global--light--BackgroundColor: #fafafa;
+    --global--light--off--BackgroundColor: #ededed;
+
+    --global--dark--BackgroundColor: #292e34;
+    --global--dark--off--BackgroundColor: #393f44;
+
+    /* // Breakpoint */
+    /* // http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/ */
+    --global--breakpoint--xs: 0;
+    --global--breakpoint--sm: 24em;
+    --global--breakpoint--md: 50;
+    --global--breakpoint--lg: 50em;
+    --global--breakpoint--xl: 73em;
+
+    /* // Typography */
+
+    /* // Font family */
+    --global--sans-serif--FontFamily: “Overpass”, Overpass, “open sans”,
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    /* // Font size */
+    --global--hero-title--FontSize: 3rem;
+    --global--main-title--FontSize: 2rem;
+    --global--secondary--title-FontSize: 1.5rem;
+    --global--sub-title--FontSize: 1.2rem;
+    --global--body--FontSize: 1rem;
+    --global--caption--FontSize: 0.8rem;
+
+    /* // line height */
+    --global--sm--LineHeight: 1.1;
+    --global--md--LineHeight: 1.5;
+    --global--lg--LineHeight: 2;
+
+    /* // Font weight */
+    --global--light--FomntWeight: 300;
+    --global--normal--FomntWeight: 400;
+    --global--bold--FomntWeight: 700;
+}
